@@ -1,0 +1,4 @@
+<a href="" class="btn btn-no-float {{if working "disabled"}} {{if linked "btn-default disabled" "btn-primary"}}" {{action "link"}}>
+  <i class="fa fa-github {{if working "fa-spin"}}"></i>
+  {{#if working}}Linking...{{else if linked}}GitHub Linked <i class="fa fa-check"></i>{{else}}Link GitHub Account{{/if}}
+</a>

@@ -1,0 +1,37 @@
+<div class="header-main-top">
+  <div class="pull-left">
+
+    <!-- * This is the responsive logo * -->
+
+    {{#link-to 'index' id="logo-small"}}<h4>BASE</h4><h5>Layr</h5>{{/link-to}}
+  </div>
+  <div class="pull-right">
+
+    <!-- * This is the trigger that will show/hide the menu * -->
+    <!-- * if the layout is in responsive mode              * -->
+
+    <a {{action 'toggleMobile'}} id="responsive-menu-trigger">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div><!-- End #header-main-top -->
+<div class="header-main-bottom">
+  {{#if session.isAuthenticated}}
+    <!-- <div class="pull-left">
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <p>Last update: 5 sec</p>
+    </div> -->
+  {{else}}
+  {{/if}}
+    <div class="pull-left">
+      <ul class="breadcrumb">
+        <li><a>Layr Client Management</a></li>
+      </ul>
+    </div>
+</div><!-- End #header-main-bottom -->

@@ -1,0 +1,18 @@
+<div class="cmanager-list-thumb">
+  <div class="lightbox relative" title="Lightbox title">
+    {{#if project.image}}
+      <img src={{project.image}} alt="">
+    {{else}}
+      <i class="fa fa-diamond"></i>
+    {{/if}}
+  </div>
+</div>
+<div class="cmanager-list-info">
+  <h5>{{project.name}}</h5>
+  <ul>
+    <li><strong>Date:</strong> 11/11/2012</li>
+    <li><strong>By:</strong> Steven Watson </li>
+    <li><strong>Size:</strong> 569 kb</li>
+  </ul>
+</div>
+{{yield}}

@@ -1,0 +1,14 @@
+{{#grid-layout rows=2 list=model as |row|}}
+  <div class="row ext-raster">
+    {{#each row as |user|}}
+      <div class="col-md-6">
+        <div class="inner-padding">
+          {{user-profile user=user}}
+        </div>
+      </div>
+      <span class="breakpoint-sm ext-raster-line-6"></span>
+    {{/each}}
+    <span class="ext-raster-line-bottom"></span>
+  </div>
+{{/grid-layout}}
+{{outlet}}

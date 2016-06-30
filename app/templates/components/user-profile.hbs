@@ -1,0 +1,35 @@
+<div class="inner-padding">
+  <div class="client-block">
+    <div class="avatar">
+      <img src="{{user.picture}}" alt="">
+      <span class="label label-default">{{user.title}}</span>
+    </div>
+    <ul class="client-block-list">
+      <li>
+        <span class="label label-danger">{{user.title}}</span>
+        <h3>{{user.name}}</h3>
+        {{#drop-down icon='cog'}}
+          <li>
+            {{#link-to 'admin.users.edit' user}}<i class="fa fa-edit"></i> Edit{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'admin.users.delete' user}}<i class="fa fa-trash-o"></i> Delete{{/link-to}}
+          </li>
+        {{/drop-down}}
+      </li>
+      <li>
+        <p>
+          {{yield}}
+        </p>
+      </li>
+      <li>
+        <span class="text-muted">Email:</span> {{user.email}}
+      </li>
+      {{#if user.phone}}
+      <li>
+        <span class="text-muted">Phone:</span> {{user.phone}}
+      </li>
+      {{/if}}
+    </ul>
+  </div>
+</div>

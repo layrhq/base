@@ -1,0 +1,73 @@
+<div id="container" class="clearfix">
+  <!-- ********************************************
+  * SIDEBAR MAIN:                            *
+  *                                          *
+  * the part which contains the main         *
+  * navigation, logo, search and more...     *
+  ******************************************** -->
+
+  <aside id="sidebar-main" class="sidebar">
+
+    <div class="sidebar-logo">
+      {{#link-to 'index' id="logo-big"}}
+        <h1><img src="/images/logo-white.png" width="32" /></h1>
+        <h2>BASE</h2>
+      {{/link-to}}
+    </div><!-- End .sidebar-logo -->
+    {{#if session.isAuthenticated}}
+      {{profile-module}}
+      {{#navbar-module}}
+        {{#link-to 'index' activeClass="page-arrow active-page" tagName="li"}}
+          <!-- <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard <span class="indicator-pill">32</span></a> -->
+          {{#link-to 'index'}}<i class="fa fa-newspaper-o"></i> Home <span class="indicator-pill">32</span>{{/link-to}}
+        {{/link-to}}
+        {{#nav-list root='clients' areModels=true list=model bus=bus tagName="li"}}
+          <i class="fa fa-universal-access"></i> Clients
+        {{/nav-list}}
+        {{#link-to 'projects' activeClass="page-arrow active-page" tagName="li"}}
+          <!-- <a href="statistics.html"><i class="fa fa-sun-o"></i> Statistics<span class="indicator-dot">2</span></a> -->
+          {{#link-to 'projects'}}<i class="fa fa-diamond"></i> Projects{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'pivotal' activeClass="page-arrow active-page" tagName="li"}}
+          <!-- <a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a> -->
+          {{#link-to 'pivotal'}}<i class="fa fa-asterisk"></i> Pivotal{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'github' activeClass="page-arrow active-page" tagName="li"}}
+          <!-- <a href="statistics.html"><i class="fa fa-sun-o"></i> Statistics<span class="indicator-dot">2</span></a> -->
+          {{#link-to 'github'}}<i class="fa fa-github"></i> GitHub{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'wercker' activeClass="page-arrow active-page" tagName="li"}}
+          <!-- <a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a> -->
+          {{#link-to 'wercker'}}<i class="fa fa-shield"></i> Wercker{{/link-to}}
+        {{/link-to}}
+        <li class="seperator"><span>Restricted</span></li>
+        {{#nav-list root='admin' list=adminList bus=bus tagName="li"}}
+          <i class="fa fa-user-secret"></i> Admin
+        {{/nav-list}}
+      {{/navbar-module}}
+    {{else}}
+      {{login-module}}
+    {{/if}}
+
+  </aside><!-- End aside -->
+
+  <div id="main" class="clearfix">
+
+    {{main-header id="header-main" tagName="header"}}
+
+    {{#if session.isAuthenticated}}
+      {{outlet}}
+    {{/if}}
+
+    {{main-footer id="footer-main" class="footer-sticky" tagName="footer"}}
+  </div><!-- End #main -->
+</div><!-- End #container -->
+
+<!-- Lockscreen -->
+<!-- <div class="lockscreen" id="lockscreen-button">
+  <div class="lockscreen-overlay"></div>
+  <div class="lockscreen-modal">
+    <img src="/images/logo-white.png" alt="" width="18" class="lockscreen-avatar" />
+    <div class="lockscreen-placeholder"></div>
+  </div>
+</div> -->

@@ -1,0 +1,17 @@
+<ul class="cmanager-list">
+  {{#each model as |p|}}
+    {{project-profile project=p tagName="li" class="mix_all"}}
+  {{/each}}
+
+  <li class="mix_all">
+    <div class="cmanager-list-thumb">
+      {{#link-to 'admin.clients.view.new-project' class="lightbox lightbox-hover relative"}}
+        <i class="fa fa-plus"></i>
+      {{/link-to}}
+    </div>
+    <div class="cmanager-list-info">
+      <h5>New Project</h5>
+    </div>
+  </li>
+</ul>
+{{outlet}}

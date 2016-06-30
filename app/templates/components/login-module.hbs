@@ -1,0 +1,8 @@
+{{#sidebar-module}}
+  <ul class="sidebar-profile-list">
+    <button {{action "signIn"}} class="btn btn-default {{if working "disabled" "active"}}">
+      <i class="fa fa-google {{if working "fa-spin"}}"></i>
+      {{#if working}}Signing In...{{else}}Sign In{{/if}}
+    </button>
+  </ul>
+{{/sidebar-module}}

@@ -1,0 +1,9 @@
+<div class="dropdown {{if open 'open'}}">
+  <a class="btn btn-default dropdown-toggle" {{action 'toggle'}}>
+    <i class="fa fa-{{icon}}"></i>
+    {{title}}
+  </a>
+  <ul class="dropdown-menu pull-right ext-dropdown-icons-right">
+    {{yield}}
+  </ul>
+</div>

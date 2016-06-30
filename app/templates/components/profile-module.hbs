@@ -1,0 +1,13 @@
+{{#sidebar-module}}
+  <img src="{{session.currentUser.picture}}" alt="" class="avatar">
+  <ul class="sidebar-profile-list">
+    <li><h3>Hi, {{session.currentUser.name}}</h3></li>
+    <li>
+      {{#link-to 'profile'}}Profile{{/link-to}}
+      |
+      <a href="" {{action "signOut"}}>
+        Logout
+      </a>
+    </li>
+  </ul>
+{{/sidebar-module}}

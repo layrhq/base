@@ -1,0 +1,70 @@
+<section class="col-md-8">
+  <div class="cmanager">
+    <div class="cmanager-inner clearfix">
+      <!-- <div class="cmanager-header responsive-helper clearfix">
+        <div class="pull-left">
+          <h4>{{model.name}}</h4>
+        </div>
+        <div class="pull-right">
+          {{#drop-down class="dropdown-wrapper" icon='cog'}}
+            <li>
+              {{#link-to 'admin.clients.delete' user}}<i class="fa fa-trash-o"></i> Delete{{/link-to}}
+            </li>
+          {{/drop-down}}
+        </div>
+      </div> -->
+      <div class="cmanager-content clearfix">
+        <div class="cmanager-sidebar">
+          <ul class="ext-tabs-cmanager">
+            <li class="active">
+              <a href="">{{model.name}}</a>
+            </li>
+            <li class="">
+              <a href=""></a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active">
+              <ul class="ext-tabs-vertical">
+                {{#link-to 'admin.clients.view.projects' model tagName="li"}}
+                  {{#link-to 'admin.clients.view.projects' model}}
+                    <i class="fa fa-diamond"></i>
+                    Projects
+                  {{/link-to}}
+                {{/link-to}}
+                {{#link-to 'admin.clients.view.billing' model tagName="li"}}
+                  {{#link-to 'admin.clients.view.billing' model}}
+                    <i class="fa fa-credit-card"></i>
+                    Billing
+                  {{/link-to}}
+                {{/link-to}}
+                {{#link-to 'admin.clients.view.history' model tagName="li"}}
+                  {{#link-to 'admin.clients.view.history' model}}
+                    <i class="fa fa-history"></i>
+                    History
+                  {{/link-to}}
+                {{/link-to}}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="cmanager-subheader">
+          <div class="pull-right">
+            <a href="" class="btn">
+              <i class="fa fa-cog"></i>
+            </a>
+          </div>
+        </div>
+        <div class="cmanager-window">
+          <div class="tab-content">
+            <div class="tab-pane active">
+              <div class="inner-padding">
+                {{outlet}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<div id="content" class="clearfix">
+  {{#basic-header}}Profile{{/basic-header}}
+  <div class="window">
+    {{#admin-header}}
+      <a href="" class="btn">
+        <i class="fa fa-cog"></i> Settings
+      </a>
+    {{/admin-header}}
+    <div class="inner-padding">
+      <div class="module-placeholder sidebar">
+        <div class="sidebar-module">
+          <div class="bio">
+            <img src="{{session.currentUser.picture}}" alt="" class="avatar">
+            <!-- <span class="indicator-dot">2</span> -->
+            <h3><a href="#">{{session.currentUser.name}}</a></h3>
+            <ul>
+              <li>
+                <a href="#">Settings</a>
+              </li>
+              <li>
+                <a href="" {{action 'signOut'}}>Logout</a>
+              </li>
+            </ul>
+            <br />
+            {{github-button id=session.currentUser.id token=session.currentUser.github_token class="center"}}
+          </div>
+        </div><!-- End .sidebar-module -->
+      </div>
+    </div>
+  </div>
+</div>

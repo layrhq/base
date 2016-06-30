@@ -1,0 +1,33 @@
+<div id="content" class="clearfix">
+  {{#basic-header}}Home{{/basic-header}}
+
+  <div class="window">
+
+    <div class="actionbar">
+      <div class="pull-left">
+      </div>
+      <div class="pull-right">
+        <a class="btn btn-default" target="_blank" href="http://github.com/layrhq">
+          <i class="fa fa-github"></i> layrhq
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inner-padding">
+          {{#each model as |evt|}}
+            <div class="file-bar">
+              <div class="file-bar-icon">
+                <img class="file-bar-avatar" src={{evt.actor.avatar_url}} />
+              </div>
+              <div class="file-bar-info">
+                <h5>{{evt.actor.login}} pushed to {{evt.repo.name}}</h5>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

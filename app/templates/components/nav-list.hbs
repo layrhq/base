@@ -1,0 +1,14 @@
+<a href="false" {{action 'toggle'}}>{{yield}} <i class="fa pull-right {{if matching "fa-caret-down" "fa-caret-left"}}"></i></a>
+<ul class="show-list {{if matching "unfold"}}">
+{{#each list as |item|}}
+  {{#if areModels}}
+    {{#link-to (get-root item root areModels) item.id activeClass="page-arrow active-page" tagName="li"}}
+      {{#link-to (get-root item root areModels) item.id}}{{item.name}}{{/link-to}}
+    {{/link-to}}
+  {{else}}
+    {{#link-to (get-root item root areModels) activeClass="page-arrow active-page" tagName="li"}}
+      {{#link-to (get-root item root areModels)}}{{item.name}}{{/link-to}}
+    {{/link-to}}
+  {{/if}}
+{{/each}}
+</ul>
