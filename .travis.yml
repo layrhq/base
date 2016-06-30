@@ -22,15 +22,5 @@ install:
   - npm install
   - bower install
 
-before_script:
-  - export AWS_ACCESS_KEY_ID=${AWS_KEY}
-  - export AWS_SECRET_ACCESS_KEY=${AWS_SECRET}
-  - aws configure set preview.cloudfront true
-
 script:
-  - ember deploy production
-  on:
-    branch: production
-
-after_script:
-  - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT} --paths /index.html
+  - echo "test"
